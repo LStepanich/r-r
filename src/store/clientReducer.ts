@@ -2,7 +2,7 @@ import { ClientAction, ClientI, ClientStateI } from "../interface/Interfaces";
 
 const defaultState: ClientStateI = { clients: [] };
 
-export const clientReducer = (state = defaultState, { type, payload }: ClientAction) => {
+export const clientReducer = (state = defaultState, { type, payload }: ClientAction): ClientStateI => {
     switch (type) {
         case 'addClient':
             return { ...state, clients: [...state.clients, { id: payload }] }
